@@ -6,7 +6,7 @@ mensWardrobe = ['spodnie', 'koszula', 'dżinsy', 'krawat', 'podkoszulka', 'pasek
 print(" \n  Lista rzeczy z damskiej garderoby: \n")
  
 for i in range(len(womensWardrobe)):
-	print('Index ' + str(i) + ' na liście rzeczy z damskiej garderoby to: ' + womensWardrobe[i])
+	print('Index ' + str(i) + ' to: ' + womensWardrobe[i])
 
 print(" \n  Damska garderoba zawiera: " + (str(len(womensWardrobe))) + " rzeczy \n")
 
