@@ -1,0 +1,19 @@
+spam = ['Jabłka', 'banany', 'tofu', 'koty']
+names = ["Natalia", "Marek", "Leon", "Feliks", "Felek"]
+
+
+def ladna_lista(lista):
+    print("'" +  ", ".join(lista[0:-1]) + " i " + lista[-1] + "'")
+
+
+print(ladna_lista(spam))
+print(ladna_lista(names))
+print(*names, sep = ', ')
+
+"""
+'Jabłka, banany, tofu i koty'
+None
+'Natalia, Marek, Leon, Feliks i Felek'
+None
+Natalia, Marek, Leon, Feliks, Felek
+"""
