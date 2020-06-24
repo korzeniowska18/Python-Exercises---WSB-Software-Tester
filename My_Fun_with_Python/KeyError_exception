@@ -1,0 +1,33 @@
+room_number = {'Kowalski': 26, 'Nowacki': 22, 'Kucharczyk': 33}
+
+owner = input('Podaj osobę, którą szukasz: ')
+
+
+try:
+
+    print(f'Pan/Pani {owner} został(a) zakwaterowany(a) w pokoju numer {room_number[owner]}.')
+
+except KeyError:
+
+    print(f"Pan/Pani {owner} nie jest zakwaterowany/a w tym hotelu.")
+    
+    
+"""
+Result without Exception:
+
+Podaj osobę, którą szukasz: Zaręba
+Traceback (most recent call last):
+  File "C:\Users\korze\Desktop\udalit.py", line 32, in <module>
+    print(f'Pan/Pani {owner} został(a) zakwaterowany(a) w pokoju numer {room_number[owner]}.')
+KeyError: 'Zaręba'
+
+Result with using Exception:
+----
+Podaj osobę, którą szukasz: Kowalski
+Pan/Pani Kowalski został(a) zakwaterowany(a) w pokoju numer 26.
+>>> 
+=================== RESTART: C:\Users\korze\Desktop\udalit.py ==================
+Podaj osobę, którą szukasz: Celecka
+Pan/Pani Celecka nie jest zakwaterowany/a w tym hotelu.
+>>> 
+"""
