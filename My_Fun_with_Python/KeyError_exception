@@ -31,3 +31,21 @@ Podaj osobę, którą szukasz: Celecka
 Pan/Pani Celecka nie jest zakwaterowany/a w tym hotelu.
 >>> 
 """
+
+"""
+Inny sposób uniknięcia KeyError, to wykorzystanie metody dict.get('klucz', 0) z podaniem awaryjnej wartości '0', która zostanie pobrana, jeśli klucz nie istnieje.
+
+>>>
+room_number = {'Kowalski': 26, 'Nowacki': 22, 'Kucharczyk': 33}
+
+owner = input('Podaj osobę, którą szukasz: ')
+
+print('Pan/Pani ' + str(owner) + ' został(a) zakwaterowany(a) w pokoju numer ' + str(room_number.get(owner, 0))+ '.')
+
+if owner not in room_number:
+    print("To znaczy, że ta osoba nie jest zakwaterowana w tym hotelu")
+>>>
+Podaj osobę, którą szukasz: Lisa
+Pan/Pani Lisa został(a) zakwaterowany(a) w pokoju numer 0.
+To znaczy, że ta osoba nie jest zakwaterowana w tym hotelu
+>>> 
