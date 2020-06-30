@@ -1,0 +1,24 @@
+#słownik zagniezdżony
+
+
+allStudents = {'Krysia': {'zeszyty': 6, 'długopisy': 3},
+               'Swieta': {'podręczniki': 2, 'długopisy': 3},
+               'Bartek': {'zeszyty': 5, 'podręczniki': 1}}
+
+def totalThings(students, item):
+    numThing = 0
+    for k, v in students.items():
+               numThing = numThing + v.get(item, 0)
+    return numThing
+
+print('Liczba przyniesionych rzeczy przez studentów:')
+print(' - Zeszyty     ' + str(totalThings(allStudents, 'zeszyty')))
+print(' - Podręczniki ' + str(totalThings(allStudents, 'podręczniki')))
+print(' - Długopisy   ' + str(totalThings(allStudents, 'długopisy')))
+               
+#Wynik:
+
+Liczba przyniesionych rzeczy przez studentów:
+ - Zeszyty     11
+ - Podręczniki 3
+ - Długopisy   6
