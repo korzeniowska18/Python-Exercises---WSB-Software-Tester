@@ -1,5 +1,8 @@
 """
 upper(), lower(), capitalize()
+>>> "Natali".upper().lower().islower()
+True
+>>> 
 """
 
 print("Cześć! Jak masz na imię?")
