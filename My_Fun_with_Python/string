@@ -1,0 +1,50 @@
+"""
+upper(), lower(), capitalize()
+"""
+
+print("Cześć! Jak masz na imię?")
+
+name = input()
+
+print("\n")
+
+print(f'{name.capitalize()}, Czy wszystko u Ciebie w porządku?')
+
+mood = input()
+
+print("\n")
+
+if mood.lower() == 'tak':
+    print("Bardzo się cieszę. U mnie też wszystko w porządku.")
+elif mood.lower() == 'tak!':
+    print("Super! U mnie też wszystko w porządku.")
+elif mood.upper() == 'OK':
+    print("Mam nadzieję, że to znaczy, ze jest wszystko w porządku")
+else:
+    print("Nie martw się. Jutro będzie lepiej!")
+    
+    """
+    >>>
+    Cześć! Jak masz na imię?
+natali
+
+
+Natali, Czy wszystko u Ciebie w porządku?
+ok
+
+
+Mam nadzieję, że to znaczy, ze jest wszystko w porządku
+>>> 
+>>> 
+=================== RESTART: C:\Users\korze\Desktop\udalit.py ==================
+Cześć! Jak masz na imię?
+leo
+
+
+Leo, Czy wszystko u Ciebie w porządku?
+jak to powiedzieć...
+
+
+Nie martw się. Jutro będzie lepiej!
+>>>
+"""
