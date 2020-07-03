@@ -1,5 +1,5 @@
 """
-upper(), lower(), capitalize()
+upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle()
 >>> "Natali".upper().lower().islower()
 True
 >>> 
@@ -25,29 +25,56 @@ elif mood.upper() == 'OK':
     print("Mam nadzieję, że to znaczy, ze jest wszystko w porządku")
 else:
     print("Nie martw się. Jutro będzie lepiej!")
-    
+
+while True:
+    print(f'{name.capitalize()}, Ile masz lat?')
+    age = input()
+    if age.isdecimal():
+        break
+    print("Wiek musi byc podany w postaci liczby")
+
+age = int(age)
+
+while True:
+    if age <= 20:
+        print("Całe życie przed tobą")
+        break
+    elif (age > 20 and age <= 40):
+        print("To piękny wiek... jeszcze dużo przed tobą...")
+        break
+    else:
+        print("Ciesz się życiem...")
+        break
+        
+ while True:
+    print("A teraz wybierz swoje hasło(tylko litery i cyfry).")
+    password = input()
+    if password.isalnum():
+        break
+    print('Prypominam, Hasło może składać się jedynie z liter i cyfr')
+print("Hasło zostało zapisane")
+
     """
     >>>
-    Cześć! Jak masz na imię?
-natali
-
-
-Natali, Czy wszystko u Ciebie w porządku?
-ok
-
-
-Mam nadzieję, że to znaczy, ze jest wszystko w porządku
->>> 
->>> 
-=================== RESTART: C:\Users\korze\Desktop\udalit.py ==================
 Cześć! Jak masz na imię?
-leo
+olka
 
 
-Leo, Czy wszystko u Ciebie w porządku?
-jak to powiedzieć...
-
-
+Olka, Czy wszystko u Ciebie w porządku?
+mniej więcej
 Nie martw się. Jutro będzie lepiej!
->>>
+Olka, Ile masz lat?
+oh
+Wiek musi byc podany w postaci liczby
+Olka, Ile masz lat?
+35
+To piękny wiek... jeszcze dużo przed tobą...
+A teraz wybierz swoje hasło(tylko litery i cyfry).
+kotkidwa!222
+Prypominam, Hasło może składać się jedynie z liter i cyfr
+A teraz wybierz swoje hasło(tylko litery i cyfry).
+kotkidwa
+Hasło zostało zapisane
+>>> 
+>>> 
 """
