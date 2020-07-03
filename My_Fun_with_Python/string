@@ -1,5 +1,5 @@
 """
-upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle()
+upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith()
 >>> "Natali".upper().lower().islower()
 True
 >>> 
@@ -8,14 +8,13 @@ True
 print("Cześć! Jak masz na imię?")
 
 name = input()
+name = name.capitalize()
 
 print("\n")
 
-print(f'{name.capitalize()}, Czy wszystko u Ciebie w porządku?')
+print(f'{name}, Czy wszystko u Ciebie w porządku?')
 
 mood = input()
-
-print("\n")
 
 if mood.lower() == 'tak':
     print("Bardzo się cieszę. U mnie też wszystko w porządku.")
@@ -27,7 +26,7 @@ else:
     print("Nie martw się. Jutro będzie lepiej!")
 
 while True:
-    print(f'{name.capitalize()}, Ile masz lat?')
+    print(f'{name}, Ile masz lat?')
     age = input()
     if age.isdecimal():
         break
@@ -45,14 +44,23 @@ while True:
     else:
         print("Ciesz się życiem...")
         break
-        
- while True:
+
+while True:
     print("A teraz wybierz swoje hasło(tylko litery i cyfry).")
     password = input()
     if password.isalnum():
         break
     print('Prypominam, Hasło może składać się jedynie z liter i cyfr')
 print("Hasło zostało zapisane")
+
+while True:
+    print("Musimy jeszcze raz zwerifikować dane. Podaj swoje imię:")
+    name_ver = input()
+    name_ver = name_ver.capitalize()
+    if name_ver.startswith(name):
+        print("Weryfikacja przeszła pomyślnie")
+        break
+
 
     """
     >>>
@@ -75,6 +83,10 @@ Prypominam, Hasło może składać się jedynie z liter i cyfr
 A teraz wybierz swoje hasło(tylko litery i cyfry).
 kotkidwa
 Hasło zostało zapisane
+Musimy jeszcze raz zwerifikować dane. Podaj swoje imię:
+olka
+Weryfikacja przeszła pomyślnie
+
 >>> 
 >>> 
 """
