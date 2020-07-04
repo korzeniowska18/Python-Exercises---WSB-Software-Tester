@@ -106,3 +106,20 @@ Weryfikacja przeszła pomyślnie
 >>> 
 >>> 
 """
+
+wiersz = '''Kocham życia każdą chwilę,
+Słońce, co po niebie płynie,
+Białe fajerwerki śniegu,
+Deszcz, co po kałużach biega
+
+
+I stokrotki uśmiechnięte,
+Szmer jesiennych liści zwiędłych...
+Nawet, gdy ktoś serce zrani
+Życia kochać nie przestanę! '''
+
+"""
+>>> wiersz.split('\n')
+['Kocham życia każdą chwilę,', 'Słońce, co po niebie płynie,', 'Białe fajerwerki śniegu,', 'Deszcz, co po kałużach biega', '', '', 'I stokrotki uśmiechnięte,', 'Szmer jesiennych liści zwiędłych...', 'Nawet, gdy ktoś serce zrani', 'Życia kochać nie przestanę! ']
+>>> 
+"""
