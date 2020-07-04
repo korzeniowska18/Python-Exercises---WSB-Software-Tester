@@ -1,7 +1,23 @@
 """
-upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith()
+upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith(), .join(), .split()
 >>> "Natali".upper().lower().islower()
 True
+>>> 
+>>> lista = ['Mam', 'kotka', 'Felka']
+>>> ', '.join(lista)
+'Mam, kotka, Felka'
+>>> ' '.join(lista)
+'Mam kotka Felka'
+>>> 'Mam kotka Felka'.split()
+['Mam', 'kotka', 'Felka']
+>>> lista = 'Mam kotka Felka'.split()
+>>> lista
+['Mam', 'kotka', 'Felka']
+>>> slownik = {'kotek': 'Felek', 'color': 'czarny'}
+>>> print(*list(slownik.keys()))
+kotek color
+>>> print(*list(slownik.values()), sep=',')
+Felek,czarny
 >>> 
 """
 
