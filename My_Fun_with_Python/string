@@ -131,3 +131,31 @@ Nawet, gdy ktoś serce zrani
 ['Kocham życia każdą chwilę,', 'Słońce, co po niebie płynie,', 'Białe fajerwerki śniegu,', 'Deszcz, co po kałużach biega', '', '', 'I stokrotki uśmiechnięte,', 'Szmer jesiennych liści zwiędłych...', 'Nawet, gdy ktoś serce zrani', 'Życia kochać nie przestanę! ']
 >>> 
 """
+"""
+def printLection(itemsDict, leftWith, rightWith):
+    print('NA LEKCJĘ'.center(leftWith + rightWith, '-'))
+    for k, v in itemsDict.items():
+          print(k.ljust(leftWith, '-') + str (v).rjust(rightWith))
+
+lectionItems = {'zeszyty': 10, 'długopisy': 6, 'podręczniki dla uczniów': 5,
+                'podręcznik nauczyciela': 1}
+
+printLection(lectionItems, 23, 5)
+print('\n')
+printLection(lectionItems, 20, 6)
+"""
+>>>
+---------NA LEKCJĘ----------
+zeszyty----------------   10
+długopisy--------------    6
+podręczniki dla uczniów    5
+podręcznik nauczyciela-    1
+
+
+--------NA LEKCJĘ---------
+zeszyty-------------    10
+długopisy-----------     6
+podręczniki dla uczniów     5
+podręcznik nauczyciela     1
+>>>
+
