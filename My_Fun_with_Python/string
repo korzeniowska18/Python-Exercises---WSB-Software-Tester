@@ -1,5 +1,5 @@
 """
-upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith(), .join(), .split()
+upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith(), .join(), .split(), rjust(), ljust(), center()
 >>> "Natali".upper().lower().islower()
 True
 >>> 
@@ -18,6 +18,14 @@ True
 kotek color
 >>> print(*list(slownik.values()), sep=',')
 Felek,czarny
+>>> 
+>>> 'Natalia'.center(21, '*')
+'*******Natalia*******'
+>>> 
+>>> 'Natalia'.rjust(10, '*')
+'***Natalia'
+>>> 'Natalia'.ljust(15, '*')
+'Natalia********'
 >>> 
 """
 
