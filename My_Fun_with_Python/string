@@ -1,5 +1,8 @@
 """
-upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), startswith(), endswith(), .join(), .split(), rjust(), ljust(), center()
+upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), 
+startswith(), endswith(), .join(), .split(), rjust(), ljust(), center(), pyperclip.copy(), pyperclip.paste()
+
+
 >>> "Natali".upper().lower().islower()
 True
 >>> 
@@ -158,4 +161,8 @@ długopisy-----------     6
 podręczniki dla uczniów     5
 podręcznik nauczyciela     1
 >>>
-
+import pyperclip
+>>> pyperclip.copy('Piękny ten świat')
+>>> pyperclip.paste()
+'Piękny ten świat'
+>>> 
