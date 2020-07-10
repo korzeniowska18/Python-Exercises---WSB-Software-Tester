@@ -1,5 +1,6 @@
 
 # 71 340 63 36, bit = message[i:i+12] - przeprowadza iterację przez cały text i sprawdza każde 12 znaków od 0 do 12, potem od 1:13, potem od 2 do 14...
+# import re - używanie funkcji - re.compile(), oraz search(), group()
 
 def IsPhoneNumber(text):
     if len(text) != 12:
@@ -72,4 +73,25 @@ print('Zadanie wykonano!')
 Znaleziono numer telefonu: 71 340 63 36
 Znaleziono numer telefonu: 71 340 63 22
 Zadanie wykonano!
+>>> 
+
+import re
+
+phoneNumberRegex = re.compile(r'\d\d-\d\d\d-\d\d-\d\d')
+
+mo = phoneNumberRegex.search('Urząd we Wrocławiu, Adres, \
+50-153 Wrocław, tel. 71-340-63-36, tel. 71 340 63 22')
+
+print('Znaleziono numer telefonu: ' + mo.group())
+
+phoneNumberRegex = re.compile(r'\d\d \d\d\d \d\d \d\d')
+
+mo = phoneNumberRegex.search('Urząd we Wrocławiu, Adres, \
+50-153 Wrocław, tel. 71-340-63-36, tel. 71 340 63 22')
+
+print('Znaleziono numer telefonu: ' + mo.group())
+
+>>>
+Znaleziono numer telefonu: 71-340-63-36
+Znaleziono numer telefonu: 71 340 63 22
 >>> 
