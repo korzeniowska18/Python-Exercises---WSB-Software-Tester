@@ -1,5 +1,5 @@
 
-# 71 340 63 36
+# 71 340 63 36, bit = message[i:i+12] - przeprowadza iterację przez cały text i sprawdza każde 12 znaków od 0 do 12, potem od 1:13, potem od 2 do 14...
 
 def IsPhoneNumber(text):
     if len(text) != 12:
