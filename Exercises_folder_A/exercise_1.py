@@ -10,3 +10,12 @@ b = int(input("Podaj drugą liczbę: "))
 wynik = a + b
 
 print("Wynik dodawania dwóch liczb to: ", wynik)
+
+--------------------------------------------------------
+
+def suma_liczb(a, b):
+    return a + b
+a = int(input("Podaj pierwszą liczbę: "))
+
+b = int(input("Podaj drugą liczbę: "))
+print("Wynik dodawania dwóch liczb to: ", suma_liczb(a, b))
