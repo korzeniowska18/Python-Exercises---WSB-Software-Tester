@@ -20,3 +20,16 @@
 >>> (lambda x, *, y=0, z=0: x + y + z)(1, y=2, z=3)
 6
 ```
+```
+suma = lambda x, y: x + y
+
+x = int(input("Podaj pierwszą liczbę:"))
+y = int(input("Podaj drugą liczbę:"))
+
+print(suma(x, y))
+
+Podaj liczbę:56
+Podaj drugą liczbę:56
+112
+>>> 
+```
