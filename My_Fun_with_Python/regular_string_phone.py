@@ -95,3 +95,20 @@ print('Znaleziono numer telefonu: ' + mo.group())
 Znaleziono numer telefonu: 71-340-63-36
 Znaleziono numer telefonu: 71 340 63 22
 >>> 
+import re
+
+phoneNumberRegex = re.compile(r'(\d\d)-(\d\d\d)-(\d\d)-(\d\d)')
+
+mon = phoneNumberRegex.search('Urząd we Wrocławiu, Adres, \
+50-153 Wrocław, tel. 7a-340-63-36, tel. 71 340 63 22, tel. 71-340-66-37')
+
+print('Znaleziono numer telefonu: ' + mon.group(1))
+print('Znaleziono numer telefonu: ' + mon.group(2))
+print('Znaleziono numer telefonu: ' + mon.group(0))
+print('Znaleziono numer telefonu: ' + mon.group())
+>>>
+Znaleziono numer telefonu: 71
+Znaleziono numer telefonu: 340
+Znaleziono numer telefonu: 71-340-66-37
+Znaleziono numer telefonu: 71-340-66-37
+>>>
