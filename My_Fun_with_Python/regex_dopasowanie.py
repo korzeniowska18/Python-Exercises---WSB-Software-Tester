@@ -36,3 +36,20 @@ Znak | jest nazywany - potokiem, wykorzystujemy tam, gdzie trzeba dopasować jed
 >>> wynik2.group(1)
 'puter'
 >>> 
+
+
+>>> import re
+>>> word = re.compile(r'anten(n)*a')
+>>> w1 = word.search("Została podłączona antena")
+>>> w1.group()
+'antena'
+>>> w2 = word.search("Została podłączona antenna")
+>>> w2.group()
+'antenna'
+>>> w3 = word.search("Została podłączona antenna")
+>>> w3.group()
+'antenna'
+>>> w4 = word.search("Została podłączona antennnnna")
+>>> w4.group()
+'antennnnna'
+>>> 
