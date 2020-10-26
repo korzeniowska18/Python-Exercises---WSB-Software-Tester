@@ -53,3 +53,13 @@ Znak | jest nazywany - potokiem, wykorzystujemy tam, gdzie trzeba dopasować jed
 >>> w4.group()
 'antennnnna'
 >>> 
+
+>>> import re
+>>> message = re.compile(r'ogród(ecz)?ku')
+>>> message1 = message.search("Kotki bawią się w ogródku")
+>>> message1.group()
+'ogródku'
+>>> message2 = message.search("Kotki bawią się w ogródeczku")
+>>> message2.group()
+'ogródeczku'
+>>> 
