@@ -1,3 +1,7 @@
+# * - gwiazdka oznacz "Dopasuj zero lub więcej wystąpień"
+# + - plus oznacza "Dopasuj jedno wystąpienie lub więcej wystąpień", ta grupa ze stringiem w nawiasach, np. (ecz), 
+#     musi wystąpić przynajmniej jeden raz, jeżeli chcemy dopasować znak plus, musimy to zrobić w ten sposób: \+
+
 import re   >>> tworzenie obiektów wyrażeń regularnych. W tym module znajdują się wszystkie funkcje wyrażeń regularnych
 
 re.compile(), search(), group(), groups(), znak | , findall()
@@ -62,4 +66,17 @@ Znak | jest nazywany - potokiem, wykorzystujemy tam, gdzie trzeba dopasować jed
 >>> message2 = message.search("Kotki bawią się w ogródeczku")
 >>> message2.group()
 'ogródeczku'
+>>> 
+
+>>> import re
+>>> message = re.compile(r'ogród(ecz)+ku')
+>>> message1 = message.search("Kotki bawią się w ogródeczku")
+>>> message1.group()
+'ogródeczku'
+>>> message2 = message.search("Kotki bawią się w ogródeczeczeczku")
+>>> message2.group()
+'ogródeczeczeczku'
+>>> message3 = message.search("Kotki bawią się w ogródku")
+>>> message3 == None
+True
 >>> 
