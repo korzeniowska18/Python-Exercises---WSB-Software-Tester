@@ -1,6 +1,10 @@
 # * - gwiazdka oznacz "Dopasuj zero lub więcej wystąpień"
 # + - plus oznacza "Dopasuj jedno wystąpienie lub więcej wystąpień", ta grupa ze stringiem w nawiasach, np. (ecz), 
 #     musi wystąpić przynajmniej jeden raz, jeżeli chcemy dopasować znak plus, musimy to zrobić w ten sposób: \+
+# re.search("(cud){2}",text) - wyszykiwanie odpowiedniej ilości powtórzeń, dopasuje podwójne powtórzenie "cudcud"
+#     (cud){2, 4} - podwójne lub czterokrotne, (cud){2,} - od dwóch i wiecej, (cud){,4} - od zera do czterech
+#     (cud){2, 4} - dopasowanie zachłanne - dopasuje największą liczbę
+#     (cud){2, 4}? - dopasowanie niezachłanne - dopasuje najkrótszy ciąg tekstowy
 
 import re   >>> tworzenie obiektów wyrażeń regularnych. W tym module znajdują się wszystkie funkcje wyrażeń regularnych
 
@@ -80,3 +84,48 @@ Znak | jest nazywany - potokiem, wykorzystujemy tam, gdzie trzeba dopasować jed
 >>> message3 == None
 True
 >>> 
+
+
+>>> import re
+>>> text = "Jaki Świat jest cudowny, jest to cudcud"
+>>> proba1 = re.search("^Jaki.*cud$",text)
+>>> print(proba1)
+<re.Match object; span=(0, 39), match='Jaki Świat jest cudowny, jest to cudcud'>
+>>> proba2 = re.search("(cud){2}",text)
+>>> print(proba2)
+<re.Match object; span=(33, 39), match='cudcud'>
+>>> proba3 = re.search("(cud){3}",text)
+>>> print(proba3)
+None
+>>> proba5 = re.search("(cud){1}",text)
+>>> print(proba5)
+<re.Match object; span=(16, 19), match='cud'>
+>>> 
+
+>>> proba8 = re.compile(r'(cud){2}')
+>>> text = proba8.search("Jaki Świat jest cudowny, jest to cudcud")
+>>> text.group()
+'cudcud'
+
+>>> proba9 = re.compile(r'(cud){2,}')
+>>> text = proba9.search("Jaki Świat jest cudowny, jest to cudcudcud")
+>>> text.group()
+'cudcudcud'
+>>> 
+
+Zachłanne 
+
+>>> import re
+>>> cudRe = re.compile(r'(Cud){2,4}')
+>>> szukamy = cudRe.search('CudCudCudCud')
+>>> szukamy.group()
+'CudCudCudCud'
+>>> 
+niezachłanne
+
+>>> cudRe = re.compile(r'(Cud){2,4}?')
+>>> szukamy2 = cudRe.search('CudCudCudCud')
+>>> szukamy2.group()
+'CudCud'
+>>> 
+
