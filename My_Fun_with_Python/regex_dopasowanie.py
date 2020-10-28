@@ -5,6 +5,15 @@
 #     (cud){2, 4} - podwójne lub czterokrotne, (cud){2,} - od dwóch i wiecej, (cud){,4} - od zera do czterech
 #     (cud){2, 4} - dopasowanie zachłanne - dopasuje największą liczbę
 #     (cud){2, 4}? - dopasowanie niezachłanne - dopasuje najkrótszy ciąg tekstowy
+#     .search() - zwraca pierwsze dopasowanie i objekt Match
+#     .findall() - zwraca wszystkie
+#     \d - dowolna cyfra od 0 do 9
+#     \0 - dowolny znak z wyłączeniem cyfr od 0 do 9
+#     \w - Dowolna litera, cyfra lub znak podkreślenia(znaki 'słowa'(litery, cyfry, lub znaki podkreślenia))
+#     \W - dowolny znak, który nie jest literą, cyfrą lub znakiem podkreślenia
+#     \s - dowolna spacja, tabulator lub znak nowego wiersza(dopasowuje białe znaki)
+#     \S - dowolny znak, który nie jest spacją, tabulatorem lub znakiem nowego wiersza.
+#     (r'\d+\s\w+') - dopasowuje tekst zawierający jedna cyfrę lub więcej, spację, a dalej jeden znak lub więcej znaków 'słowa'
 
 import re   >>> tworzenie obiektów wyrażeń regularnych. W tym module znajdują się wszystkie funkcje wyrażeń regularnych
 
@@ -129,3 +138,35 @@ niezachłanne
 'CudCud'
 >>> 
 
+>>> import re
+>>> roomNumber = re.compile(r'\d\d\d-\d')
+>>> roomNumber.findall('W pokojach num. 123-4 i 125-1 można złożyć wnioski')
+['123-4', '125-1']
+>>> text = 'W pokojach num. 123-4 i 125-1 można złożyć wnioski'
+>>> roomNumber.findall(text)
+['123-4', '125-1']
+>>> roomNumber.search(text)
+<re.Match object; span=(16, 21), match='123-4'>
+>>> roomNumber = re.compile(r'(\d\d\d)-(\d)')   # zdefiniowane grupy
+>>> text = 'W pokojach num. 123-4 i 125-1 można złożyć wnioski'
+>>> roomNumber.findall(text)
+[('123', '4'), ('125', '1')] # zwraca listę krotek ciągów tekstowych
+>>> 
+
+>>> roomNumber = re.compile(r'\d\d\d\s\w')  #dopasowanie za użyciem innych znaków
+>>> text = 'W pokojach num. 123 A i 125 B można złożyć wnioski'
+>>> roomNumber.findall(text)
+['123 A', '125 B']
+>>>
+
+>>> roomNumber = re.compile(r'\d+\s\w+')
+>>> text = 'W pokojach num. 123 w budynku-A i 125 w budynku-B można złożyć wnioski'
+>>> roomNumber.findall(text)
+['123 w', '125 w']
+>>> text = 'W pokojach num. 123 budynek-A i 125 budynek-B można złożyć wnioski'
+>>> roomNumber.findall(text)
+['123 budynek', '125 budynek']
+>>> text = 'W pokojach num. 123 budynek_A i 125 budynek_B można złożyć wnioski'
+>>> roomNumber.findall(text)
+['123 budynek_A', '125 budynek_B']
+>>> 
