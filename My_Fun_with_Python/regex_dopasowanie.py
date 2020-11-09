@@ -17,6 +17,11 @@
 #     (r'[dsaeATK]') - w kwadratowych nawiasach możemy podać własną klasę znaków do wyszukiwania
 #     (r'[KÓ0-3.]') - nie musimy oddzielać cyfry przez /, wyszukuje od 0 do 3 oraz kropki
 #     (r'[^KÓ2-5.]') - znak daszku na poczatku wykona dopasowanie odwrotne, czy li wszystko oprócz tego co jest w nawiasach
+#     (r'^Zakopane') - znak daszku, oznacza tu wyszukiwanie dopasowań zaczynających się z tych znaków
+#     (r'Zakopane$') - zank dolara oznacza tu wyszukiwanie dopasowań kończących się tymi znakami
+#     (r'.to') - znak wieloznaczny - czyli kropka - dopasowuje dowolny znak, ale tylko jeden 
+ 
+poza znakiem nowego wiersza
 
 import re   >>> tworzenie obiektów wyrażeń regularnych. W tym module znajdują się wszystkie funkcje wyrażeń regularnych
 
@@ -195,4 +200,32 @@ niezachłanne
  'w', 'i', 'a', 'r', 'n', 'i', 'e', ',', ' ', 'g', 'a', 'l', 'e', 'r',
  'i', 'e', ' ', 's', 'z', 't', 'u', 'k', 'i', ' ', 'i', ' ', 's', 'k', 
  'l', 'e', 'p', 'y', ' ', 'z', ' ', 'p', 'a', 'm', 'i', 'ą', 't', 'k', 'a', 'm', 'i']
+>>> 
+
+>>> beginWord = re.compile(r'^Zakopane')
+>>> beginWord.search('Zakopane. Sprawdź, które atrakcje turyści wybierali najczęściej!')
+<re.Match object; span=(0, 8), match='Zakopane'>
+
+>>> endWord = re.compile(r'Zakopane$')
+>>> endWord.search('Jakie są najlepsze aktywności na świeżym powietrzu w lokalizacji Zakopane')
+<re.Match object; span=(65, 73), match='Zakopane'>
+>>> endWord.search('Jakie są najlepsze aktywności na świeżym powietrzu w lokalizacji Zakopane?') == None
+True
+>>> 
+
+>>> endPoint = re.compile(r'\d$')
+>>> endPoint.search('12345667')
+<re.Match object; span=(7, 8), match='7'>
+
+>>> endPoint = re.compile(r'^\d+$')
+>>> endPoint.search('12345667')
+<re.Match object; span=(0, 8), match='12345667'>
+>>> 
+
+>>> import re
+>>> ReWordy = re.compile(r'.to')
+>>> ReWordy.findall('Co to? Kto to? Prosto.')
+[' to', 'Kto', ' to', 'sto']
+>>> ReWordy.findall('Co to? Kto to? Prosto tosty.')
+[' to', 'Kto', ' to', 'sto', ' to']
 >>> 
