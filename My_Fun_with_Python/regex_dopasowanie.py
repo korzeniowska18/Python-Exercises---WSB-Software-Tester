@@ -20,6 +20,12 @@
 #     (r'^Zakopane') - znak daszku, oznacza tu wyszukiwanie dopasowań zaczynających się z tych znaków
 #     (r'Zakopane$') - zank dolara oznacza tu wyszukiwanie dopasowań kończących się tymi znakami
 #     (r'.to') - znak wieloznaczny - czyli kropka - dopasowuje dowolny znak, ale tylko jeden 
+#     (.*) - tryb zachłanny, jak najwięcej dopasowań
+#     (.*?) - tryb niezachłanny
+#     (r'Kategoria: (.*) Produkt: (.*)')  
+#     (r'<.*?>')
+#     (r'<.*>')
+#     (r'.*', re.DOTALL) - kropka będzie dopasowywać wszystkie znaki włącznie ze znakiem nowego wiersza
  
 poza znakiem nowego wiersza
 
@@ -228,4 +234,43 @@ True
 [' to', 'Kto', ' to', 'sto']
 >>> ReWordy.findall('Co to? Kto to? Prosto tosty.')
 [' to', 'Kto', ' to', 'sto', ' to']
+>>> 
+
+>>> products = re.compile(r'Kategoria: (.*) Produkt: (.*)')
+>>> wynik = products.search('Kategoria: Sport Produkt: Hantle')
+>>> wynik.group(1)
+'Sport'
+>>> wynik.group(2)
+'Hantle'
+>>> wynik.group(1, 2)
+('Sport', 'Hantle')
+>>> 
+
+
+>>> 
+>>> 
+>>> products = re.compile(r'<.*?>')
+>>> wynik = products.search('<Kategoria: <Sport> Produkt: <Hantle>>')
+>>> wynik.group()
+'<Kategoria: <Sport>'
+
+
+>>> products = re.compile(r'<.*>')
+>>> wynik = products.search('<Kategoria: <Sport> Produkt: <Hantle>>')
+>>> wynik.group(0)
+'<Kategoria: <Sport> Produkt: <Hantle>>'
+>>> wynik.group()
+'<Kategoria: <Sport> Produkt: <Hantle>>'
+>>> 
+
+>>> gory = re.compile(r'.*')
+>>> wyraz = gory.search('W Dolinie Białej Wody z imponującą\nstanowiącą wyzwanie wspinaczy,\nścianą Młynarczyka')
+>>> wyraz.group()
+'W Dolinie Białej Wody z imponującą'
+>>> 
+
+>>> gory = re.compile(r'.*', re.DOTALL)
+>>> wyraz = gory.search('W Dolinie Białej Wody z imponującą\nstanowiącą wyzwanie wspinaczy,\nścianą Młynarczyka')
+>>> wyraz.group()
+'W Dolinie Białej Wody z imponującą\nstanowiącą wyzwanie wspinaczy,\nścianą Młynarczyka'
 >>> 
