@@ -14,6 +14,9 @@
 #     \s - dowolna spacja, tabulator lub znak nowego wiersza(dopasowuje białe znaki)
 #     \S - dowolny znak, który nie jest spacją, tabulatorem lub znakiem nowego wiersza.
 #     (r'\d+\s\w+') - dopasowuje tekst zawierający jedna cyfrę lub więcej, spację, a dalej jeden znak lub więcej znaków 'słowa'
+#     (r'[dsaeATK]') - w kwadratowych nawiasach możemy podać własną klasę znaków do wyszukiwania
+#     (r'[KÓ0-3.]') - nie musimy oddzielać cyfry przez /, wyszukuje od 0 do 3 oraz kropki
+#     (r'[^KÓ2-5.]') - znak daszku na poczatku wykona dopasowanie odwrotne, czy li wszystko oprócz tego co jest w nawiasach
 
 import re   >>> tworzenie obiektów wyrażeń regularnych. W tym module znajdują się wszystkie funkcje wyrażeń regularnych
 
@@ -169,4 +172,27 @@ niezachłanne
 >>> text = 'W pokojach num. 123 budynek_A i 125 budynek_B można złożyć wnioski'
 >>> roomNumber.findall(text)
 ['123 budynek_A', '125 budynek_B']
+>>> 
+>>> import re
+>>> allZnaki = re.compile(r'[dsaeATK]')
+>>> allZnaki.findall('KRUPÓWKI. Główną arterią komunikacyjną miasta są drewniane zakopiańskie restauracje, kawiarnie, galerie sztuki i sklepy z pamiątkami.')
+['K', 'K', 'a', 'e', 'a', 'a', 's', 'a', 's', 'd', 'e', 'a', 'e', 'a', 'a', 's', 'e', 'e', 's', 'a', 'a', 'e', 'a', 'a', 'e', 'a', 'e', 'e', 's', 's', 'e', 'a', 'a']
+>>> 
+
+>>> allZnaki = re.compile(r'[KÓ0-3.]')
+>>> allZnaki.findall('1.KRUPÓWKI. Główną arterią komunikacyjną miasta są drewniane zakopiańskie restauracje, kawiarnie, galerie sztuki i sklepy z pamiątkami.')
+['1', '.', 'K', 'Ó', 'K', '.', '.']
+
+
+>>> allZnaki = re.compile(r'[^KÓ2-5.]')
+>>> allZnaki.findall('1.KRUPÓWKI. Główną arterią komunikacyjną miasta są drewniane zakopiańskie restauracje, kawiarnie, galerie sztuki i sklepy z pamiątkami.')
+['1', 'R', 'U', 'P', 'W', 'I', ' ', 'G', 'ł', 'ó', 'w', 'n', 'ą', ' ', 
+ 'a', 'r', 't', 'e', 'r', 'i', 'ą', ' ', 'k', 'o', 'm', 'u', 'n', 'i', 
+ 'k', 'a', 'c', 'y', 'j', 'n', 'ą', ' ', 'm', 'i', 'a', 's', 't', 'a',
+ ' ', 's', 'ą', ' ', 'd', 'r', 'e', 'w', 'n', 'i', 'a', 'n', 'e', ' ', 
+ 'z', 'a', 'k', 'o', 'p', 'i', 'a', 'ń', 's', 'k', 'i', 'e', ' ', 'r', 
+ 'e', 's', 't', 'a', 'u', 'r', 'a', 'c', 'j', 'e', ',', ' ', 'k', 'a',
+ 'w', 'i', 'a', 'r', 'n', 'i', 'e', ',', ' ', 'g', 'a', 'l', 'e', 'r',
+ 'i', 'e', ' ', 's', 'z', 't', 'u', 'k', 'i', ' ', 'i', ' ', 's', 'k', 
+ 'l', 'e', 'p', 'y', ' ', 'z', ' ', 'p', 'a', 'm', 'i', 'ą', 't', 'k', 'a', 'm', 'i']
 >>> 
