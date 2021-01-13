@@ -184,3 +184,15 @@ print(path)
 >>>
 C:/Users/user/Documents/new
 >>>
+imie = input("Podaj swoje imię: ")
+
+print('Cześć, {}!'.format(imie))
+print('Cześć, ' + imie + '!')
+print(f'Cześć, {imie}!')
+
+>>>
+Podaj swoje imię: Nata
+Cześć, Nata!
+Cześć, Nata!
+Cześć, Nata!
+>>>
