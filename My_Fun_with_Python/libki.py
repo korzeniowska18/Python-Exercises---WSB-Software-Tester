@@ -27,6 +27,19 @@ print(dir(string))
  'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
  'title', 'translate', 'upper', 'zfill']
 >>>
+
+help(str.count)
+
+>>>
+Help on method_descriptor:
+
+count(...)
+    S.count(sub[, start[, end]]) -> int
+    
+    Return the number of non-overlapping occurrences of substring sub in
+    string S[start:end].  Optional arguments start and end are
+    interpreted as in slice notation.
+>>>
 a = 5
 print(dir(a))
 
