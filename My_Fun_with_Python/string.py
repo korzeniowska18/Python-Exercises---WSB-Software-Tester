@@ -166,3 +166,21 @@ import pyperclip
 >>> pyperclip.paste()
 'Piękny ten świat'
 >>> 
+
+url = ('https://www.onet.pl/sport/onetsport//'
+       'tenis-atp-w-delray-beach-christian-harrison-hubert-hurkacz-wynik//'
+       'c1x3yp2,d87b6cc4')
+
+
+print(url)
+
+>>>
+https://www.onet.pl/sport/onetsport//tenis-atp-w-delray-beach-christian-harrison-hubert-hurkacz-wynik//c1x3yp2,d87b6cc4
+>>>
+path = (r'C:/Users/user/Documents/new')
+
+
+print(path)
+>>>
+C:/Users/user/Documents/new
+>>>
