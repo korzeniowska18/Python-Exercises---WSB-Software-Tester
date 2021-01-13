@@ -40,3 +40,14 @@ print(dir(a))
  '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__',
  '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
 >>>
+a = '567'
+b = 888
+c = '0'
+     
+print('a: {0}\nb: {1}\nc: {2}'.format(type(a), type(b), type(c)))
+
+>>>
+a: <class 'str'>
+b: <class 'int'>
+c: <class 'str'>
+>>>
