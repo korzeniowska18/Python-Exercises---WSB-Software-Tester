@@ -209,3 +209,7 @@ Cześć, Nata!
 >>> a.rstrip()
 '   Travel'
 >>> 
+>>> x = '*'.join(['apple', 'orange', 'watermelon', 'pear'])
+>>> print(x)
+apple*orange*watermelon*pear
+>>> 
