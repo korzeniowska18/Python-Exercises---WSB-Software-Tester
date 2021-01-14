@@ -196,3 +196,16 @@ Cześć, Nata!
 Cześć, Nata!
 Cześć, Nata!
 >>>
+>>> "#I#like#travel#".replace('#',' ')
+' I like travel '
+>>> text = "#I#like#travel#"
+>>> text.replace('#',' ')
+' I like travel '
+>>> a = '   Travel   '
+>>> a.strip()
+'Travel'
+>>> a.lstrip()
+'Travel   '
+>>> a.rstrip()
+'   Travel'
+>>> 
