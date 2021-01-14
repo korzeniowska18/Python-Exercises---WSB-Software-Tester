@@ -213,3 +213,13 @@ Cześć, Nata!
 >>> print(x)
 apple*orange*watermelon*pear
 >>> 
+
+>>> x = 'Czy podróże kształcą?'
+>>> x = x.lower()
+
+>>> x = x.replace('ó', 'o').replace('ż', 'z').replace('ł', 'l').replace('ą', 'a').replace('?', '.')
+>>> x
+'czy podroze ksztalca.'
+>>> print(len(set(x)))
+15
+>>> 
