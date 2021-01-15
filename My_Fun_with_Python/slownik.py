@@ -65,3 +65,46 @@ słowo w języku polskim: Ojczyzna, tłumaczenie na język niemiecki: das Heimat
 słowo w języku polskim: zawód, tłumaczenie na język niemiecki: der Beruf
 słowo w języku polskim: dyspozycja, tłumaczenie na język niemiecki: das Verfügung
 słowo w języku polskim: gospodarka, tłumaczenie na język niemiecki: der Wirtschaft
+
+>>> autos = {'Ford': 2017, 'Audi': 2015, 'BMW': 2016}
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016}
+>>> autos['Opel'] = 2018
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016, 'Opel': 2018}
+>>> autos.keys()
+dict_keys(['Ford', 'Audi', 'BMW', 'Opel'])
+>>> autos.values()
+dict_values([2017, 2015, 2016, 2018])
+>>> autos.items()
+dict_items([('Ford', 2017), ('Audi', 2015), ('BMW', 2016), ('Opel', 2018)])
+>>> autos('Ford')
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    autos('Ford')
+TypeError: 'dict' object is not callable
+>>> autos['Ford']
+2017
+>>> autos.popitem()
+('Opel', 2018)
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016}
+>>> autos.setdefault('BMW', 2020)
+2016
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016}
+
+>>> autos.setdefault('Mitsubishi', 2010)    => setdefault tylko dla items które nie znajdują się jeszcze w dictionary
+2010
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016, 'Mitsubishi': 2010}
+>>> autos.get('Dacia')
+>>> print(autos.get('Dacia'))
+None
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2016, 'Mitsubishi': 2010}
+>>> NewAutos = {'BMW': 2021, 'Fiat': 2021}
+>>> autos.update(NewAutos)
+>>> autos
+{'Ford': 2017, 'Audi': 2015, 'BMW': 2021, 'Mitsubishi': 2010, 'Fiat': 2021}
+>>> 
