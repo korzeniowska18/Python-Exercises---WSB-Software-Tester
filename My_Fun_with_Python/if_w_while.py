@@ -174,4 +174,83 @@ while i< max:
 
     i+=1
 
+#jak zapakować jak najwięcej paczek do kontenera
+paczki = [30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+print(paczki)
+#paczki.sort()
+paczki.reverse()
+
+rozmiarKontenera = 90
+kontener = []
+i = 0
+
+while sum(kontener) + paczki[i] < rozmiarKontenera and i < len(paczki):
+    kontener.append(paczki[i])
+    i += 1
+
+print("Suma paczek w kontenerze: ", sum(kontener))
+print("Zawartość kontenera: ", kontener)
+print("Liczba paczek w kontenerze: ", len(kontener))
+
+[30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+Suma paczek w kontenerze:  78
+Zawartość kontenera:  [3, 4, 5, 5, 7, 10, 12, 15, 17]
+Liczba paczek w kontenerze:  9
+>>> 
+= RESTART: C:\Users\korze\Documents\Repozytorium\Python-Exercises---WSB-Software-Tester\My_Fun_with_Python\kurs_pocz.py
+[30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+Suma paczek w kontenerze:  87
+Zawartość kontenera:  [40, 12, 18, 4, 10, 3]
+Liczba paczek w kontenerze:  6
+>>> 
+paczki = [30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+print(paczki)
+#paczki.sort()
+paczki.reverse()
+
+rozmiarKontenera = 90
+kontener = []
+i = 0
+
+while i < len(paczki)and (rozmiarKontenera - sum(kontener) >= min(paczki)):
+    if (rozmiarKontenera - sum(kontener)) >= paczki[i]:
+        kontener.append(paczki[i])
+    i += 1
+
+print("Suma paczek w kontenerze: ", sum(kontener))
+print("Zawartość kontenera: ", kontener)
+print("Liczba paczek w kontenerze: ", len(kontener))
+
+>>>
+[30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+Suma paczek w kontenerze:  87
+Zawartość kontenera:  [40, 12, 18, 4, 10, 3]
+Liczba paczek w kontenerze:  6
+>>> 
+paczki = [30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+print(paczki)
+paczki.sort()
+paczki.reverse()
+
+rozmiarKontenera = 90
+kontener = []
+i = 0
+
+while i < len(paczki)and (rozmiarKontenera - sum(kontener) >= min(paczki)):
+    if (rozmiarKontenera - sum(kontener)) >= paczki[i]:
+        kontener.append(paczki[i])
+    i += 1
+
+print("Suma paczek w kontenerze: ", sum(kontener))
+print("Zawartość kontenera: ", kontener)
+print("Liczba paczek w kontenerze: ", len(kontener))
+
+>>>
+[30, 20, 15, 5, 26, 45, 20, 30, 5, 7, 17, 3, 10, 4, 18, 12, 40]
+Suma paczek w kontenerze:  90
+Zawartość kontenera:  [45, 40, 5]
+Liczba paczek w kontenerze:  3
+>>>
+
+
 
