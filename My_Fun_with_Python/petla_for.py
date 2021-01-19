@@ -244,3 +244,77 @@ for x in range(1, 6):
 4	  4	  8	 12	 16	 20
 5	  5	 10	 15	 20	 25
 >>> 
+#Zmienna i ma wartość 10. Korzystając z pętli for wyznacz wartość
+    #silnia i
+
+i = 10
+result = 1
+
+ 
+for j in range(1,i+1):
+    result *= j
+ 
+print(i, result)
+
+>>>
+10 3628800
+>>> 
+
+x = 10
+ 
+for i in range(1,x+1):
+ 
+    result = 1
+    
+    for j in range(1,i+1):
+        result *= j
+ 
+    print(i, result)
+    
+>>>
+1 1
+2 2
+3 6
+4 24
+5 120
+6 720
+7 5040
+8 40320
+9 362880
+10 3628800
+>>> 
+
+lista_rzeczownikow = ['piesek', 'kotek', 'cukierek', 'kwiat', 'samochód']
+lista_przymiotnikow = ['biały', 'duży', 'miły', 'mały', 'nowy']
+ 
+for rzeczownik in lista_rzeczownikow:
+    for przymiotnik in lista_przymiotnikow:
+        print(rzeczownik, przymiotnik)
+        
+>>>
+piesek biały
+piesek duży
+piesek miły
+piesek mały
+piesek nowy
+kotek biały
+kotek duży
+kotek miły
+kotek mały
+kotek nowy
+cukierek biały
+cukierek duży
+cukierek miły
+cukierek mały
+cukierek nowy
+kwiat biały
+kwiat duży
+kwiat miły
+kwiat mały
+kwiat nowy
+samochód biały
+samochód duży
+samochód miły
+samochód mały
+samochód nowy
+>>> 
