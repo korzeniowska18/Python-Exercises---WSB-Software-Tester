@@ -155,6 +155,55 @@ for kandydat in range(2, 21):
 20 jest liczbą pierwszą!
 >>> 
 
+text = 'SOAP (Simple Object Access Protocol) jest protokołem \
+komunikacyjnym, który wykorzystuje XML do zapytań. \
+Do przesyłania informacji może wykorzystać między innymi\
+takie protokoły jak: HTTP, HTTPS, SMTP. Został stworzony\
+w 1998 roku przez grupę osób przy współpracy z Microsoft. \
+Obecnie jest standardem W3C'
 
+krotki_text = ''
+ 
+words = text.split(' ')
+counter = 0
+ 
+for word in words:
+    
+    krotki_text += word+' '
+    counter += 1
+ 
+    if counter>=13:
+        print(krotki_text)
+        break
+    
 
-  
+  >>>
+SOAP (Simple Object Access Protocol) jest protokołem komunikacyjnym, który wykorzystuje XML do zapytań. 
+>>> 
+
+definicje = ['SOAP (Simple Object Access Protocol) jest protokołem \
+##komunikacyjnym, który wykorzystuje XML do zapytań. \
+##Do przesyłania informacji może wykorzystać między innymi\
+##takie protokoły jak: HTTP, HTTPS, SMTP. Został stworzony\
+##w 1998 roku przez grupę osób przy współpracy z Microsoft. \
+##Obecnie jest standardem W3C']
+
+for definicja in definicje:
+ 
+    words = definicja.split(' ')
+    krotki_text = ''
+    licznik = 0
+ 
+    for word in words:
+ 
+        krotki_text += word+' '
+        licznik += 1
+ 
+        if licznik >= 13:
+            print(krotki_text)
+            break
+            
+>>>
+SOAP (Simple Object Access Protocol) jest protokołem ##komunikacyjnym, który wykorzystuje XML do zapytań. 
+>>> 
+
