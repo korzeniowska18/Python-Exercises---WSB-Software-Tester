@@ -114,3 +114,75 @@ Liczba 17 jest nieparzysta
 Liczba 18 jest parzysta
 Liczba 19 jest nieparzysta
 >>>
+string_C = '+---+---+---+---+'
+string_D = '|   |   |   |   |'
+
+for s in range(11):
+    print(string_C)
+
+print('\n')
+
+for i in range(9):
+    if i % 2 == 0:
+        print(string_C)
+    else:
+        print(string_D)
+
+print('\n')
+
+for i in range(1,10):
+    print("x"*i)
+ 
+print('')
+ 
+for i in range(1,10):
+    if i % 2 == 0:
+        print("x"*i)
+    else:
+        print("o"*i)
+        
+ >>>
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
++---+---+---+---+
+
+
++---+---+---+---+
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
++---+---+---+---+
+
+
+x
+xx
+xxx
+xxxx
+xxxxx
+xxxxxx
+xxxxxxx
+xxxxxxxx
+xxxxxxxxx
+
+o
+xx
+ooo
+xxxx
+ooooo
+xxxxxx
+ooooooo
+xxxxxxxx
+ooooooooo
+>>> 
