@@ -318,3 +318,69 @@ samochód miły
 samochód mały
 samochód nowy
 >>> 
+
+
+a1 = 0
+a2 = 1
+a3 = a1 + a2
+print("Ciąg Fibonacciego:")
+
+for i in range(0, 20):
+    print(i," Suma kolejnych liczb od 0 d0 20 jest to: ", a3)
+    a1 = a2
+    a2 = a3
+    a3 = a1 + a2
+    
+>>>
+Ciąg Fibonacciego:
+0  Suma kolejnych liczb od 0 d0 20 jest to:  1
+1  Suma kolejnych liczb od 0 d0 20 jest to:  2
+2  Suma kolejnych liczb od 0 d0 20 jest to:  3
+3  Suma kolejnych liczb od 0 d0 20 jest to:  5
+4  Suma kolejnych liczb od 0 d0 20 jest to:  8
+5  Suma kolejnych liczb od 0 d0 20 jest to:  13
+6  Suma kolejnych liczb od 0 d0 20 jest to:  21
+7  Suma kolejnych liczb od 0 d0 20 jest to:  34
+8  Suma kolejnych liczb od 0 d0 20 jest to:  55
+9  Suma kolejnych liczb od 0 d0 20 jest to:  89
+10  Suma kolejnych liczb od 0 d0 20 jest to:  144
+11  Suma kolejnych liczb od 0 d0 20 jest to:  233
+12  Suma kolejnych liczb od 0 d0 20 jest to:  377
+13  Suma kolejnych liczb od 0 d0 20 jest to:  610
+14  Suma kolejnych liczb od 0 d0 20 jest to:  987
+15  Suma kolejnych liczb od 0 d0 20 jest to:  1597
+16  Suma kolejnych liczb od 0 d0 20 jest to:  2584
+17  Suma kolejnych liczb od 0 d0 20 jest to:  4181
+18  Suma kolejnych liczb od 0 d0 20 jest to:  6765
+19  Suma kolejnych liczb od 0 d0 20 jest to:  10946
+>>> 
+
+text = 'Rozwiązania oparte na VPN stosowane są np. w sieciach korporacyjnych, \
+których zdalni użytkownicy pracują ze swoich domów na niezabezpieczonych \
+łączach. Wirtualne sieci prywatne charakteryzują się dość dużą efektywnością,\
+nawet na słabych łączach (dzięki kompresji danych) oraz wysokim \
+poziomem bezpieczeństwa (ze względu na szyfrowanie). Rozwiązanie to\
+sprawdza się w firmach, których pracownicy często podróżują lub \
+korzystają z możliwości'
+
+print("Słowa zawierające literę 'p': ")
+
+listOfWords = text.replace('\n',' ').split(' ')
+
+for word in listOfWords:
+    if word.lower().find('p') > 0:
+        print(word)
+        
+>>>
+
+Słowa zawierające literę 'p': 
+oparte
+VPN
+np.
+korporacyjnych,
+niezabezpieczonych
+kompresji
+bezpieczeństwa
+tosprawdza
+>>> 
+
