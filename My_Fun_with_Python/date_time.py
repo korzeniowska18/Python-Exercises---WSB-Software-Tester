@@ -185,3 +185,20 @@ Minimalna wartośc i maksymalna:  1 9999
 sumę timedelta:  -1 day, 23:27:00
 Dziasiaj jest:  2021-02-26
 >>> 
+
+from datetime import datetime
+print('results generated',datetime.today())
+print('results generated:',datetime.today().strftime("%Y-%m-%d"))
+ 
+# another solution (by Tomek - thanks for cooperation!):
+import datetime
+print('results generated',datetime.date.today())
+print('results generated:',datetime.date.today().strftime("%Y-%m-%d"))
+
+>>>>>
+
+results generated 2021-02-26 09:34:46.901862
+results generated: 2021-02-26
+results generated 2021-02-26
+results generated: 2021-02-26
+>>> 
