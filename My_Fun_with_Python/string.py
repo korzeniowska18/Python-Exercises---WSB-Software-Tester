@@ -1,6 +1,19 @@
 """
 upper(), lower(), capitalize(), isalpha(), isalnum(), isdecimal(), isspace(), istitle(), 
 startswith(), endswith(), .join(), .split(), rjust(), ljust(), center(), pyperclip.copy(), pyperclip.paste()
+casefold() - The casefold() method is an aggressive lower() method which converts strings to case folded strings for caseless matching.
+find(), count(), rfind() - na której pozycji to co szukamy od prawej lub od lewej, uzywając find()
+podobna fukcja index() oraz rindex(). Jeżeli nie znajdujemy szukanej literki, to funkcja index zwraca błąd, a find() -1
+można szukać literki za pomoca operatora IN
+"p" in text
+True
+
+>>> import string
+>>> string.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> string.digits
+'0123456789'
+
 
 
 >>> "Natali".upper().lower().islower()
@@ -222,4 +235,74 @@ apple*orange*watermelon*pear
 'czy podroze ksztalca.'
 >>> print(len(set(x)))
 15
+>>>
+
+>>> text = "This IS teXT"
+>>> text.casefold()
+'this is text'
+>>> text = "This IS teKST"
+>>> text.casefold()
+'this is tekst'
+>>> text = "Tę tekst jest częścią zadania"
+>>> text.casefold()
+'tę tekst jest częścią zadania'
+>>> import string
+>>> string.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> string.digits
+'0123456789'
+>>> nowa_lista = text.split(' ')
+>>> nowa_lista
+['Tę', 'tekst', 'jest', 'częścią', 'zadania']
+>>> ' '.join(nowa_lista)
+'Tę tekst jest częścią zadania'
+>>> 
+
+poem = '''1.Runą i w łunach spłoną pożarnych 
+Krzyże kościołów, krzyże ofiarne 
+I w bezpowrotnym zgubi się szlaku 
+W lechickiej ziemi Orzeł Polaków. 
+2.O, jasne słońce- wodzu Stalinie! 
+Niech sława twoja nigdy nie zginie 
+Niechaj jak orły powiedzie z gniazda 
+Rosja i z Kremla płonąca gwiazda. 
+3.Na ziemskim globie flagi czerwone 
+Będą na wiatrach grały jak dzwony 
+Czerwona Armia i wódz jej Stalin 
+Odwiecznych wrogów na zawsze obali! 
+4.Zaćmisz się rychło w czarnej godzinie 
+Polsko- Twe córy i syny, 
+Wiara i każdy krzyż na mogile, 
+U stóp am legą w prochu i pyle! '''
+ 
+lines = poem.split('\n')
+ 
+for i in range(8):
+    print(lines[i])
+    print(lines[i+8])
+    
+>>>
+>>> lines
+['1.Runą i w łunach spłoną pożarnych ', 'Krzyże kościołów, krzyże ofiarne ', 'I w bezpowrotnym zgubi się szlaku ', 'W lechickiej ziemi Orzeł Polaków. ', '2.O, jasne słońce- wodzu Stalinie! ', 'Niech sława twoja nigdy nie zginie ', 'Niechaj jak orły powiedzie z gniazda ', 'Rosja i z Kremla płonąca gwiazda. ', '3.Na ziemskim globie flagi czerwone ', 'Będą na wiatrach grały jak dzwony ', 'Czerwona Armia i wódz jej Stalin ', 'Odwiecznych wrogów na zawsze obali! ', '4.Zaćmisz się rychło w czarnej godzinie ', 'Polsko- Twe córy i syny, ', 'Wiara i każdy krzyż na mogile, ', 'U stóp am legą w prochu i pyle! ']
+>>> for i in range(8):
+    print(lines[i])
+    print(lines[i+8])
+
+    
+1.Runą i w łunach spłoną pożarnych 
+3.Na ziemskim globie flagi czerwone 
+Krzyże kościołów, krzyże ofiarne 
+Będą na wiatrach grały jak dzwony 
+I w bezpowrotnym zgubi się szlaku 
+Czerwona Armia i wódz jej Stalin 
+W lechickiej ziemi Orzeł Polaków. 
+Odwiecznych wrogów na zawsze obali! 
+2.O, jasne słońce- wodzu Stalinie! 
+4.Zaćmisz się rychło w czarnej godzinie 
+Niech sława twoja nigdy nie zginie 
+Polsko- Twe córy i syny, 
+Niechaj jak orły powiedzie z gniazda 
+Wiara i każdy krzyż na mogile, 
+Rosja i z Kremla płonąca gwiazda. 
+U stóp am legą w prochu i pyle! 
 >>> 
