@@ -415,3 +415,102 @@ minvalue= 14.065967196904865 maxvalue= 83.58130718700791
 minvalue= 83.24829413927492 maxvalue= 92.034953963204
 83 	 89 	 93
 >>> 
+
+#LOTTO
+
+import random
+
+moje_liczby = []
+
+while len(moje_liczby) < 7:
+
+    nowa_liczba = random.randint(1, 49)
+
+    if nowa_liczba in moje_liczby:
+        print("Wylosowano: ", nowa_liczba)
+        continue
+
+    moje_liczby.append(nowa_liczba)
+
+print("Te leczby są jako wylosowane: ", moje_liczby)
+
+>>>>>>>
+Wylosowano:  29
+Te leczby są jako wylosowane:  [29, 30, 32, 4, 5, 17, 34]
+>>> 
+============== RESTART: C:\Users\korzenio\Documents\liczymy.py ==============
+Te leczby są jako wylosowane:  [8, 35, 17, 16, 4, 18, 38]
+>>> 
+============== RESTART: C:\Users\korzenio\Documents\liczymy.py ==============
+Te leczby są jako wylosowane:  [12, 42, 43, 24, 19, 4, 34]
+>>> 
+============== RESTART: C:\Users\korzenio\Documents\liczymy.py ==============
+Te leczby są jako wylosowane:  [41, 36, 19, 23, 30, 31, 33]
+>>> 
+
+#KARTY
+
+colors = ['Hearts','Diamonds','Clubs','Spades']
+figures = ['Ace','King','Queen','Jack','10','9']
+ 
+allCards = []
+for c in colors:
+    for f in figures:
+        allCards.append("%s - %s" % (c, f))
+ 
+print(allCards)
+ 
+import random
+ 
+random.shuffle(allCards)
+print(allCards)
+ 
+player1 = []
+player2 = []
+ 
+max = len(allCards)
+for i in range(max):
+    if i % 2 == 0:
+        player1.append(allCards[i])
+    else:
+        player2.append(allCards[i])
+ 
+print('-------PLAYER 1--------')
+print(player1)
+ 
+print('-------PLAYER 1--------')
+print(player2)              
+ 
+player1 = allCards[:12]
+player2 = allCards[12:]
+ 
+ 
+print('-------PLAYER 1--------')
+print(player1)
+ 
+print('-------PLAYER 2--------')
+print(player2)    
+
+>>>>>>
+['Hearts - Ace', 'Hearts - King', 'Hearts - Queen', 'Hearts - Jack', 'Hearts - 10', 'Hearts - 9', 
+ 'Diamonds - Ace', 'Diamonds - King', 'Diamonds - Queen', 'Diamonds - Jack', 'Diamonds - 10', 
+ 'Diamonds - 9', 'Clubs - Ace', 'Clubs - King', 'Clubs - Queen', 'Clubs - Jack', 'Clubs - 10',
+ 'Clubs - 9', 'Spades - Ace', 'Spades - King', 'Spades - Queen', 'Spades - Jack', 'Spades - 10', 'Spades - 9']
+['Diamonds - 9', 'Clubs - 9', 'Diamonds - Jack', 'Hearts - Ace', 'Spades - Queen', 'Diamonds - Ace',
+ 'Diamonds - King', 'Diamonds - 10', 'Diamonds - Queen', 'Clubs - 10', 'Spades - Jack', 'Spades - Ace',
+ 'Spades - 9', 'Clubs - Jack', 'Hearts - 10', 'Hearts - Jack', 'Clubs - Queen', 'Hearts - Queen',
+ 'Clubs - Ace', 'Hearts - 9', 'Spades - King', 'Spades - 10', 'Clubs - King', 'Hearts - King']
+-------PLAYER 1--------
+['Diamonds - 9', 'Diamonds - Jack', 'Spades - Queen', 'Diamonds - King', 'Diamonds - Queen',
+ 'Spades - Jack', 'Spades - 9', 'Hearts - 10', 'Clubs - Queen', 'Clubs - Ace', 'Spades - King', 'Clubs - King']
+-------PLAYER 1--------
+['Clubs - 9', 'Hearts - Ace', 'Diamonds - Ace', 'Diamonds - 10', 'Clubs - 10', 'Spades - Ace', 'Clubs - Jack',
+ 'Hearts - Jack', 'Hearts - Queen', 'Hearts - 9', 'Spades - 10', 'Hearts - King']
+-------PLAYER 1--------
+['Diamonds - 9', 'Clubs - 9', 'Diamonds - Jack', 'Hearts - Ace', 'Spades - Queen', 'Diamonds - Ace', 'Diamonds - King', 
+ 'Diamonds - 10', 'Diamonds - Queen', 'Clubs - 10', 'Spades - Jack', 'Spades - Ace']
+-------PLAYER 2--------
+['Spades - 9', 'Clubs - Jack', 'Hearts - 10', 'Hearts - Jack', 'Clubs - Queen', 'Hearts - Queen', 'Clubs - Ace',
+ 'Hearts - 9', 'Spades - King', 'Spades - 10', 'Clubs - King', 'Hearts - King']
+>>> 
+
