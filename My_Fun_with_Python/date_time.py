@@ -55,3 +55,37 @@ Czas obecny: 01:55:02 PM
 24-godz. czas: 13:57
 
 """
+>>>
+>>> import time
+>>> import sys
+>>> print(sys.version)
+3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)]
+>>>
+>>> print(time.perf_counter(), time.localtime(time.perf_counter()))
+89.4915672 time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=1, tm_min=1, tm_sec=29, tm_wday=3, tm_yday=1, tm_isdst=0)
+>>> 
+
+>>> import time
+>>> time.time()
+1614326427.3598132
+>>> time.localtime(time.time())
+time.struct_time(tm_year=2021, tm_mon=2, tm_mday=26, tm_hour=9, tm_min=0, tm_sec=57, tm_wday=4, tm_yday=57, tm_isdst=0)
+>>> time.asctime(time.localtime(time.time()))
+'Fri Feb 26 09:01:38 2021'
+>>> time.localtime(time.clock())
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    time.localtime(time.clock())
+AttributeError: module 'time' has no attribute 'clock'
+>>> time.localtime(time.clock()))
+SyntaxError: unmatched ')'
+>>> import calendar
+>>> calendar.month(2021, 7)
+'     July 2021\nMo Tu We Th Fr Sa Su\n          1  2  3  4\n 5  6  7  8  9 10 11\n12 13 14 15 16 17 18\n19 20 21 22 23 24 25\n26 27 28 29 30 31\n'
+
+>>> calendar.month(2021, 7, w=1, l=2)
+'     July 2021\n\nMo Tu We Th Fr Sa Su\n\n          1  2  3  4\n\n 5  6  7  8  9 10 11\n\n12 13 14 15 16 17 18\n\n19 20 21 22 23 24 25\n\n26 27 28 29 30 31\n\n'
+>>> calendar.setfirstweekday(6)
+>>> calendar.month(2021, 7)
+'     July 2021\nSu Mo Tu We Th Fr Sa\n             1  2  3\n 4  5  6  7  8  9 10\n11 12 13 14 15 16 17\n18 19 20 21 22 23 24\n25 26 27 28 29 30 31\n'
+>>> 
