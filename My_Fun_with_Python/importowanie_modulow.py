@@ -115,3 +115,51 @@ family 48.49596603908168
  'tan', 'tanh', 'tau', 'trunc']
 
 >>> 
+import math
+inputdata = [0,1,2,3,5,8,13,21,34,55,89]
+factortable = [0,0.01,0.02, 0.03,0.05,0.08,0.13,0.21,0.34,0.55,0.89]
+print('input data has  ',len(inputdata),'elements')
+print('factor table has',len(factortable),'elements')
+if len(inputdata) == len(factortable):
+    i=0
+    while i<len(inputdata):
+        minvalue=inputdata[i]-factortable[i]*inputdata[i]
+        maxvalue=inputdata[i]+factortable[i]*inputdata[i]
+        print('minvalue=',minvalue,'maxvalue=',maxvalue)
+        
+        mininteger = math.floor(minvalue)
+        maxinteger = math.ceil(maxvalue)
+        print(mininteger,"\t",inputdata[i],"\t",maxinteger)
+        i+=1
+else:
+    print("inputdata and factortable need to have equal number of elements")
+print('--------------------------------------------------------------------')
+
+>>>
+
+input data has   11 elements
+factor table has 11 elements
+minvalue= 0 maxvalue= 0
+0 	 0 	 0
+minvalue= 0.99 maxvalue= 1.01
+0 	 1 	 2
+minvalue= 1.96 maxvalue= 2.04
+1 	 2 	 3
+minvalue= 2.91 maxvalue= 3.09
+2 	 3 	 4
+minvalue= 4.75 maxvalue= 5.25
+4 	 5 	 6
+minvalue= 7.36 maxvalue= 8.64
+7 	 8 	 9
+minvalue= 11.31 maxvalue= 14.69
+11 	 13 	 15
+minvalue= 16.59 maxvalue= 25.41
+16 	 21 	 26
+minvalue= 22.439999999999998 maxvalue= 45.56
+22 	 34 	 46
+minvalue= 24.749999999999996 maxvalue= 85.25
+24 	 55 	 86
+minvalue= 9.789999999999992 maxvalue= 168.21
+9 	 89 	 169
+--------------------------------------------------------------------
+>>> 
