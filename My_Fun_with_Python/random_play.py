@@ -373,3 +373,45 @@ print("Hasło: ", haslo)
 >>>>
 Hasło:  JYDU)f]Y#&u{.6&
 >>> 
+
+import random
+import math
+
+inputdata = [0,1,2,3,5,8,13,21,34,55,89]
+
+i=0
+while i<len(inputdata):
+    minvalue=inputdata[i]-random.random()*inputdata[i]
+    maxvalue=inputdata[i]+random.random()*inputdata[i]
+    print('minvalue=',minvalue,'maxvalue=',maxvalue)
+    
+    mininteger = math.floor(minvalue)
+    maxinteger = math.ceil(maxvalue)
+    print(mininteger,"\t",inputdata[i],"\t",maxinteger)
+    i+=1
+
+>>>>
+
+minvalue= 0.0 maxvalue= 0.0
+0 	 0 	 0
+minvalue= 0.3758588887525387 maxvalue= 1.0871835826533798
+0 	 1 	 2
+minvalue= 0.5705757801493927 maxvalue= 2.414894448157301
+0 	 2 	 3
+minvalue= 2.451737968890167 maxvalue= 5.522643845592755
+2 	 3 	 6
+minvalue= 0.7220958337343282 maxvalue= 9.740233254547645
+0 	 5 	 10
+minvalue= 0.07644154681096094 maxvalue= 10.93059808669996
+0 	 8 	 11
+minvalue= 0.7143375904497997 maxvalue= 17.952817873305552
+0 	 13 	 18
+minvalue= 3.363787099539625 maxvalue= 33.4172574488981
+3 	 21 	 34
+minvalue= 21.05930863429192 maxvalue= 65.35590490861951
+21 	 34 	 66
+minvalue= 14.065967196904865 maxvalue= 83.58130718700791
+14 	 55 	 84
+minvalue= 83.24829413927492 maxvalue= 92.034953963204
+83 	 89 	 93
+>>> 
