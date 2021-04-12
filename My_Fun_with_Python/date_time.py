@@ -202,3 +202,18 @@ results generated: 2021-02-26
 results generated 2021-02-26
 results generated: 2021-02-26
 >>> 
+
+from datetime import date
+
+def IleDniDoKoncaRoku():
+    dzien_dzisiejszy = date.today()
+    rok_biezacy = dzien_dzisiejszy.year
+    data_ostatniego_dnia_w_roku = date(rok_biezacy, 12, 31)
+    delta = data_ostatniego_dnia_w_roku - dzien_dzisiejszy
+    print(delta.days)
+ 
+IleDniDoKoncaRoku()
+
+>>>
+263
+>>> 
