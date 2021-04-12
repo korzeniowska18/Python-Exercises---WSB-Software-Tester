@@ -217,3 +217,24 @@ IleDniDoKoncaRoku()
 >>>
 263
 >>> 
+
+def NajblizszyDzienRoboczy(rok, miesiac, dzien):
+    from datetime import date
+    from datetime import timedelta
+
+    dzien = date(rok, miesiac, dzien)
+
+    if dzien.weekday() == 5:
+        dzienroboczy = dzien + timedelta(days=2)
+    elif dzien.weekday() == 6:
+        dzienroboczy = dzien + timedelta(days=1)
+    else:
+        dzienroboczy = dzien
+
+    print("Najbliższy dzień roboczy dla dnia ", dzien, "jest to ", dzienroboczy)
+
+NajblizszyDzienRoboczy(2021, 5, 1)
+
+>>>
+Najbliższy dzień roboczy dla dnia  2021-05-01 jest to  2021-05-03
+>>> 
